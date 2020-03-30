@@ -1,3 +1,30 @@
 <resources>
-    <string name="app_name">AndroidFinal</string>
+    <string name="app_name">CryptoTracker</string>
+
+
+    <!--TabLayout Strings-->
+    <string name="tab1">Markets</string>
+    <string name="tab2">WatchList</string>
+    <string name="tab3">Portfolio</string>
+    <string name="tab4">Settings</string>
+
+    <string-array name="test">
+        <item name="1">1</item>
+        <item name="2">2</item>
+        <item name="3">3</item>
+        <item name="4">4</item>
+        <item name="5">5</item>
+    </string-array>
+
+    <!--Add to Portfolio-->
+    <string name="Price">Price Per Coin: </string>
+    <string name="Quantity">Quantity: </string>
+    <string name="Date">Date: </string>
+    <string name="Buy">Save Transaction</string>
+
+    <!-- Headers -->
+    <string name="headerRank">Rank</string>
+    <string name="headerTicker">Ticker</string>
+    <string name="headerName">Name</string>
+    <string name="headerPrice">Price</string>
 </resources>
