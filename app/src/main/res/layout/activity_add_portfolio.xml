@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddPortfolio"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_alignParentTop="true">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Price"
+            android:textSize="20sp"
+            android:layout_weight="2"/>
+        <EditText
+            android:id="@+id/portfolioPrice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_below="@+id/price"
+        android:id="@+id/quantity">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Quantity"
+            android:textSize="20sp"
+            android:layout_weight="2"/>
+        <EditText
+            android:id="@+id/portfolioQuantity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:layout_weight="1"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_below="@id/quantity"
+        android:id="@+id/date">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/Date"
+            android:textSize="20sp"
+            android:layout_weight="2"/>
+        <TextView
+            android:id="@+id/portfolioDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:layout_weight="1"
+            android:textSize="20sp"
+            />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/addTransaction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:text="@string/Buy"
+        android:layout_gravity="bottom"
+        android:layout_below="@+id/date"
+
+        />
+
+
+
+</RelativeLayout>
