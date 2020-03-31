@@ -27,9 +27,9 @@ public class DBHandler extends SQLiteOpenHelper {
             "CREATE TABLE " + portfolioentry.TABLE_NAME + " (" +
                     portfolioentry.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                     portfolioentry.COLUMN_TICKER + " TEXT," +
-                    portfolioentry.COLUMN_PURCHASE_PRICE + " DOUBLE," +
-                    portfolioentry.COLUMN_PURCHASE_QUANTITY + " DOUBLE," +
-                    portfolioentry.COLUMN_PURCHASE_DATE + " DATE)";
+                    portfolioentry.COLUMN_PRICE + " DOUBLE," +
+                    portfolioentry.COLUMN_QUANTITY + " DOUBLE," +
+                    portfolioentry.COLUMN_DATE + " DATE)";
 
     private static final String SQL_DELETE_PORTFOLIO =
             "DROP TABLE IF EXISTS " + portfolioentry.TABLE_NAME;

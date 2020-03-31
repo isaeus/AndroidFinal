@@ -17,14 +17,18 @@
     </string-array>
 
     <!--Add to Portfolio-->
+    <string name="CoinName">Ticker Symbol: </string>
     <string name="Price">Price Per Coin: </string>
     <string name="Quantity">Quantity: </string>
     <string name="Date">Date: </string>
-    <string name="Buy">Save Transaction</string>
+    <string name="Buy">Buy</string>
+    <string name="Sell">Sell</string>
+    <string name="SaveTransaction">Save Transaction</string>
 
     <!-- Headers -->
     <string name="headerRank">Rank</string>
     <string name="headerTicker">Ticker</string>
     <string name="headerName">Name</string>
     <string name="headerPrice">Price</string>
+
 </resources>

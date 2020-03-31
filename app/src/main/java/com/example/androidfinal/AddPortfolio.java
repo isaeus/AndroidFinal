@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +29,8 @@ public class AddPortfolio extends AppCompatActivity {
     private int year, month, day;
     private Button addTransaction;
     private DBHandler db;
+    private RadioButton buyTransaction;
+    private RadioButton sellTransaction;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,16 +66,24 @@ public class AddPortfolio extends AppCompatActivity {
                 EditText pPrice = findViewById(R.id.portfolioPrice);
                 EditText pQuantity = findViewById(R.id.portfolioQuantity);
                 TextView pDate = findViewById(R.id.portfolioDate);
+                buyTransaction = findViewById(R.id.buytransaction);
+                sellTransaction = findViewById(R.id.selltransaction);
+                EditText pTicker = findViewById(R.id.portfolioCoinName);
 
                 ContentValues values = new ContentValues();
 
-                values.put(portfolioentry.COLUMN_TICKER, "ETH");
-                Log.d("portfolioEntry", "Ticker:" + "ETH");
-                values.put(portfolioentry.COLUMN_PURCHASE_PRICE, pPrice.getText().toString());
+                values.put(portfolioentry.COLUMN_TICKER, pTicker.getText().toString().toUpperCase());
+                Log.d("portfolioEntry", "Ticker:" + pTicker.getText().toString().toUpperCase());
+                values.put(portfolioentry.COLUMN_PRICE, pPrice.getText().toString());
                 Log.d("portfolioEntry", "Purchase Price:" + pPrice.getText().toString());
-                values.put(portfolioentry.COLUMN_PURCHASE_QUANTITY, pQuantity.getText().toString());
+                if(buyTransaction.isChecked()){
+                    values.put(portfolioentry.COLUMN_QUANTITY, pQuantity.getText().toString());
+                }
+                else if(sellTransaction.isChecked()){
+                    values.put(portfolioentry.COLUMN_QUANTITY, "-"+pQuantity.getText().toString());
+                }
                 Log.d("portfolioEntry", "Purchase Quantity:" + pQuantity.getText().toString());
-                values.put(portfolioentry.COLUMN_PURCHASE_DATE, pDate.getText().toString());
+                values.put(portfolioentry.COLUMN_DATE, pDate.getText().toString());
                 Log.d("portfolioEntry", "Purchase Date:" + pDate.getText().toString());
 
                 long newRowID = wdb.insert(portfolioentry.TABLE_NAME, null, values);
