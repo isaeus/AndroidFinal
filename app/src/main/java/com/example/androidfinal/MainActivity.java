@@ -14,15 +14,13 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements FetchWorker.fetchWorkerListener {
 
-    private String url = "https://min-api.cryptocompare.com/data/";
-    private final String APIKEY = "9c9c65051e18937847eee15f316bece9dbf51c6690221c9acaf542a15f875309";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        url += "top/mktcapfull?limit=" + "100" + "&tsym=USD" + "&api_key=" + APIKEY;
+        String url;
+        url = CryptoAPI.url + "top/mktcapfull?limit=" + "100" + "&tsym=USD" + "&api_key=" + CryptoAPI.APIKEY;
         FetchWorker fw = new FetchWorker(MainActivity.this);
         fw.execute(url);
 
