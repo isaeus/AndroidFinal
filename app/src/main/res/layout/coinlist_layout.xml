@@ -1,40 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/coinlist_rank"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
         android:layout_gravity="start"
-        android:gravity="start"/>
+        android:layout_weight="1"
+        android:gravity="start"
+        android:textColor="@color/ctextColor" />
+
     <TextView
         android:id="@+id/coinlist_ticker"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="2"
         android:layout_gravity="start"
+        android:layout_weight="2"
         android:gravity="center"
-        />
+        android:textColor="@color/ctextColor" />
+
     <TextView
         android:id="@+id/coinlist_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="5"
         android:layout_gravity="start"
+        android:layout_weight="5"
         android:gravity="center"
-        />
+        android:textColor="@color/ctextColor" />
+
     <TextView
         android:id="@+id/coinlist_price"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="2"
         android:layout_gravity="start"
-        android:gravity="end"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        />
+        android:layout_weight="2"
+        android:gravity="end"
+        android:textColor="@color/ctextColor" />
 
 </LinearLayout>

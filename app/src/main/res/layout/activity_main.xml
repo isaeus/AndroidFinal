@@ -4,68 +4,81 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cBackground"
     tools:context=".MainActivity">
 
-
     <LinearLayout
+        android:layout_marginTop="8dp"
         android:id="@+id/listHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="?attr/actionBarSize"
+        android:layout_above="@+id/bottomLayout"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:background="@color/cBackground"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp">
+
             <TextView
                 android:id="@+id/coinlist_rank"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:layout_gravity="start"
+                android:layout_weight="1"
                 android:gravity="start"
-                android:text="@string/headerRank"/>
+                android:text="@string/headerRank"
+                android:textColor="@color/cHeaderColor" />
+
             <TextView
                 android:id="@+id/coinlist_ticker"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
                 android:layout_gravity="start"
+                android:layout_weight="2"
                 android:gravity="center"
                 android:text="@string/headerTicker"
-                />
+                android:textColor="@color/cHeaderColor" />
+
             <TextView
                 android:id="@+id/coinlist_name"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
                 android:layout_gravity="start"
+                android:layout_weight="5"
                 android:gravity="center"
                 android:text="@string/headerName"
-                />
+                android:textColor="@color/cHeaderColor" />
+
             <TextView
                 android:id="@+id/coinlist_price"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
                 android:layout_gravity="start"
+                android:layout_weight="2"
                 android:gravity="center"
                 android:text="@string/headerPrice"
-                />
+                android:textColor="@color/cHeaderColor" />
         </LinearLayout>
 
         <ListView
             android:id="@+id/displayCoins"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="vertical"
+            android:background="@color/cBackground"
             android:paddingBottom="12dp"
-            />
+            android:scrollbars="vertical" />
     </LinearLayout>
 
-
+    <include
+        android:id="@+id/bottomLayout"
+        layout="@layout/bottomnav_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
 
 
 </RelativeLayout>

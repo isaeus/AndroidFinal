@@ -22,7 +22,6 @@ public class FetchWorker extends AsyncTask<String, String, String> {
     protected String doInBackground(String... params) {
 
         try{
-
             URL url = new URL(params[0]);
             Log.d("url", params[0]);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();

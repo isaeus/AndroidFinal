@@ -9,4 +9,6 @@
     <color name="cNavBar">#1E1C2C</color>
     <color name="cAccent">#007AED</color>
     <color name="cIcon">#55506D</color>
+    <color name="ctextColor">#ffffff</color>
+    <color name="cHeaderColor">#F4AFC1</color>
 </resources>

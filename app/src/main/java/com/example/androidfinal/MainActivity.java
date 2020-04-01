@@ -1,10 +1,16 @@
 package com.example.androidfinal;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ListView;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -12,12 +18,17 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements FetchWorker.fetchWorkerListener {
+public class MainActivity extends AppCompatActivity implements FetchWorker.fetchWorkerListener, BottomNavigationView.OnNavigationItemSelectedListener {
 
+    private BottomNavigationView botNav;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getSupportActionBar().setTitle("Top 100");
+        botNav = (BottomNavigationView) findViewById(R.id.bottomNav);
+        botNav.setOnNavigationItemSelectedListener(this);
+        botNav.getMenu().findItem(R.id.item1).setChecked(true);
 
         String url;
         url = CryptoAPI.url + "top/mktcapfull?limit=" + "100" + "&tsym=USD" + "&api_key=" + CryptoAPI.APIKEY;
@@ -56,5 +67,24 @@ public class MainActivity extends AppCompatActivity implements FetchWorker.fetch
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.item1:
+
+                break;
+            case R.id.item2:
+                Intent toWatchlist = new Intent(this, WatchList.class);
+                startActivity(toWatchlist);
+                break;
+            case R.id.item3:
+                Intent toPortfolio = new Intent(this, Portfolio.class);
+                startActivity(toPortfolio);
+                break;
+        }
+
+        return true;
     }
 }
