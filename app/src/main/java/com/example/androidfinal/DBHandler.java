@@ -15,9 +15,7 @@ public class DBHandler extends SQLiteOpenHelper {
     private static final String SQL_CREATE_WATCHLIST =
             "CREATE TABLE " + watchlistentry.TABLE_NAME + " (" +
                     watchlistentry.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-                    watchlistentry.COLUMN_TICKER + " TEXT," +
-                    watchlistentry.COLUMN_PRICE + " DOUBLE," +
-                    watchlistentry.COLUMN_CHANGE24HOUR + " DATE)";
+                    watchlistentry.COLUMN_TICKER + " TEXT)";
 
     private static final String SQL_DELETE_WATCHLIST =
             "DROP TABLE IF EXISTS " + watchlistentry.TABLE_NAME;

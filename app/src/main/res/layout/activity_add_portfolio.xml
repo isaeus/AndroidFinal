@@ -134,7 +134,7 @@
         android:id="@+id/addTransaction"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buysell"
+        android:layout_alignParentBottom="true"
         android:layout_gravity="bottom"
         android:layout_margin="30dp"
         android:text="@string/SaveTransaction" />

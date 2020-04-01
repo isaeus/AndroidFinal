@@ -38,12 +38,7 @@ public class AddPortfolio extends AppCompatActivity {
         setContentView(R.layout.activity_add_portfolio);
 
         db = new DBHandler(this);
-        SQLiteDatabase wdb = db.getWritableDatabase();
-
-//        botNav = (BottomNavigationView) findViewById(R.id.bottomNav);
-//        botNav.setOnNavigationItemSelectedListener(this);
         tvDate = (TextView) findViewById(R.id.portfolioDate);
-
         calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH);
@@ -85,9 +80,7 @@ public class AddPortfolio extends AppCompatActivity {
                 Log.d("portfolioEntry", "Purchase Quantity:" + pQuantity.getText().toString());
                 values.put(portfolioentry.COLUMN_DATE, pDate.getText().toString());
                 Log.d("portfolioEntry", "Purchase Date:" + pDate.getText().toString());
-
-                long newRowID = wdb.insert(portfolioentry.TABLE_NAME, null, values);
-                Log.d("msg", newRowID + "");
+                wdb.insert(portfolioentry.TABLE_NAME, null, values);
                 Toast.makeText(getApplicationContext(), "Transaction Added", Toast.LENGTH_SHORT).show();
                 finish();
             }
